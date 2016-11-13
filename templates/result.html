@@ -97,53 +97,17 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-            <form action='/' method='POST'>
-                <div class="form-group">
-                    <input type="text" name="" class="form-control">
-                  </div>
-              </form>
-          </div>  <!--End column-->
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-              <form action='/' method='POST'>
-                  <div class="form-group">
-                      <input type="text" name="" class="form-control">
-                    </div>
-                </form>
-            </div>  <!--End column-->
-          </div>
-          <div class="row">
-            <div class="col-md-8">
-                <form action='/' method='POST'>
-                    <div class="form-group">
-                        <input type="text" name="" class="form-control">
-                      </div>
-                  </form>
-              </div>  <!--End column-->
-            </div>
-            <div class="row">
-              <div class="col-md-8">
-                  <form action='/' method='POST'>
-                      <div class="form-group">
-                          <input type="text" name="" class="form-control">
-                        </div>
-                    </form>
-                </div>  <!--End column-->
+          {% for i in results %}
+              <div class="well">
+                  <p><span>{{ i }}</span></p>
               </div>
-              <div class="row">
-                <div class="col-md-8">
-                    <form action='/' method='POST'>
-                        <div class="form-group">
-                            <input type="text" name="" class="form-control">
-                          </div>
-                      </form>
-                  </div>  <!--End column-->
-                </div>
+          {% endfor %}
+          </div>  <!--End column-->
+        </div>  <!--End row-->
     </div><!-- /.container -->
     <!-- END SEARCH FORM -------->
 
-    
+
 
 
 
