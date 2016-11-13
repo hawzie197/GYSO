@@ -18,7 +18,7 @@
     <!-- Custom CSS -->
     <style>
     #nav {
-      background-color: #E9E9E9;
+      background-color: #00001a;
       border: none;
       font-weight: bold;
     }
@@ -40,14 +40,17 @@
     body {
         padding-top: 70px;
         /*background-image: url("/static/back.jpg");*/
-        background-color: white;
+        background-color: #e9f0f5;
         background-repeat: no-repeat;
         width: 100%;
         height: 100%;
       }
     .container form input {
-      height: 140px;
       background-color: #E9E9E9;
+    }
+    .container form {
+      background-color: #dcdcdc;
+      border: 4px solid #e9f0f5;
     }
     .row {
       margin: 0px;
@@ -96,13 +99,19 @@
 <!-- Search form! ------->
     <div class="container">
       <div class="row">
-        <div class="col-md-8">
-          {% for i in results %}
-              <div class="well">
-                  <p><span>{{ i }}</span></p>
-              </div>
-          {% endfor %}
+
+          {% for i, url in zip(results, urls) %}
+          <div id="summary" class="col-md-8">
+              <form id="form1" action="{{ url_for('result') }}" method="post">
+                  <div class="well">
+                      <span>{{ i }}</span><br />
+                      <br />
+                      <a href="{{ url }}"><input name="url" value="{{ url }}"></a>
+                  </div>
+              </form>
           </div>  <!--End column-->
+          {% endfor %}
+
         </div>  <!--End row-->
     </div><!-- /.container -->
     <!-- END SEARCH FORM -------->

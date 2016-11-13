@@ -55,7 +55,7 @@ def gallery():
     for i in top_5:
         resulting_words += [i[0] + ' ']
     new_phrase = ''.join(resulting_words)
-    print("new phrase to search with ",new_phrase)
+    #print("new phrase to search with ",new_phrase)
     urls = get_key_words(new_phrase, gen_sums = 1)
     p = Pool ()
     listy = p.map(get_summary,urls)
@@ -154,16 +154,16 @@ def result():
                 for key in list2:
                     string += key[0] + ' '
                 phrase = string
-        top_5 = get_key_words(phrase, gen_sums = None)
-        resulting_words = []
-        for i in top_5:
-            resulting_words += [i[0] + ' ']
-        new_phrase = ''.join(resulting_words)
-        #print("new phrase to search with ",new_phrase)
-        urls = get_key_words(new_phrase, gen_sums = 1)
-        p = Pool ()
-        listy = p.map(get_summary,urls)
-        return render_template('result.html', results=listy)
+                top_5 = get_key_words(phrase, gen_sums = None)
+                resulting_words = []
+                for i in top_5:
+                    resulting_words += [i[0] + ' ']
+                new_phrase = ''.join(resulting_words)
+                #print("new phrase to search with ",new_phrase)
+                urls = get_key_words(new_phrase, gen_sums = 1)
+                p = Pool ()
+                listy = p.map(get_summary,urls)
+                return render_template('result.html', results=listy, urls=urls, zip=zip)
 
 
 
